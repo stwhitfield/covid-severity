@@ -82,7 +82,7 @@ If you use this work in your research, please cite it as follows:
 ```bibtex
 @misc{lara2023covid,
   title={Diagnosing COVID-19 Severity from Chest X-Ray Images Using ViT and CNN Architectures},
-  author={Luis Lara and Lucia Eve Berger and Rajesh Raju and Shawn Whitfield},
+  author={Luis Lara and Lucia Eve Berger and Rajesh Kumar Raju and Shawn Whitfield},
   year={2023},
   archivePrefix={arXiv},
   eprint={2502.16622},
