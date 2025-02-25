@@ -1,7 +1,7 @@
 # Diagnosing COVID-19 Severity from Chest X-Ray Images Using ViT and CNN Architectures
 
 [![arxiv](https://img.shields.io/badge/arXiv-2502.16622-b31b1b.svg)](https://arxiv.org/abs/2502.16622)
-[![HF Model: Vit (Regression task)](https://img.shields.io/badge//HF%20Model-ViT%20(Regression%20task)-FFD21E.svg)](https://huggingface.co/ludolara/vit-COVID-19-severity)
+[![HF Model: Vit (Regression task)](https://img.shields.io/badge/HF%20Model-ViT%20(Regression%20task)-FFD21E.svg)](https://huggingface.co/ludolara/vit-COVID-19-severity)
 
 ## Abstract
 
@@ -71,3 +71,17 @@ Our results are competitive with others in the COVID severity prediction space (
 - Luis Lara performed dataset preprocessing, creation of testing modules, investigation of efficacy of MLPMixer model and ViT for a seven-class prediction task, produced the results for the ViT model for the regression task, compiled Table 3, contributed the ViT part of the Experimental Results section and contributed ideas to the Results and Analysis regression discussion.
 - Rajesh Raju investigated data preprocessing including image and text augmentation methods, investigated the utility of clinical notes, resized CXR images to 224 x 224, and wrote part of the conclusion.
 - Shawn Whitfield combined the three CXR datasets, including extracting .dcm files and mapping severity scores into opacity scores, built the PyTorch Lightning framework to facilitate train:validation cycles, performed all regression experiments on pretrained ImageNet and torchxrayvision models (other than the ViT), implemented the saliency mapping, and wrote the following sections of the paper: Abstract; Introduction; Related work; Methods - data augmentation, models, saliency maps; Experiments - datasets, evaluation methods, experimental results (regression), results and analysis (regression, saliency); part of the conclusion.
+
+# Citation
+If you use this work in your research, please cite it as follows:
+
+```bibtex
+@article{lara2023covid,
+  title={Diagnosing COVID-19 Severity from Chest X-Ray Images Using ViT and CNN Architectures},
+  author={Lara, Luis and Berger, Lucia Eve and Raju, Rajesh and Whitfield, Shawn},
+  year={2023},
+  archivePrefix={arXiv},
+  eprint={2502.16622},
+  primaryClass={cs.CV}
+}
+```
