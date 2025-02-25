@@ -76,12 +76,13 @@ Our results are competitive with others in the COVID severity prediction space (
 If you use this work in your research, please cite it as follows:
 
 ```bibtex
-@article{lara2023covid,
+@misc{lara2023covid,
   title={Diagnosing COVID-19 Severity from Chest X-Ray Images Using ViT and CNN Architectures},
-  author={Lara, Luis and Berger, Lucia Eve and Raju, Rajesh and Whitfield, Shawn},
+  author={Lara Luis and Berger Lucia Eve and Raju Rajesh and Whitfield Shawn},
   year={2023},
   archivePrefix={arXiv},
   eprint={2502.16622},
-  primaryClass={cs.CV}
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2502.16622}
 }
 ```
