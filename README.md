@@ -5,7 +5,7 @@
 
 > [!CAUTION]
 > **COVID-19 Disclaimer:**  
-> The content in this repository is not peer-reviewed. It should not be relied upon without context to guide clinical practice or health-related behavior. It should not be reported in the media as established information without consulting multiple experts.
+> The content in this repository is not peer-reviewed. It should not be relied upon without context to guide clinical practice or health-related behavior, and it should not be reported in the media as established information without consulting multiple experts.
 
 ## Abstract
 
