@@ -1,4 +1,4 @@
-# Diagnosing Medical Images for COVID-19 Severity
+# Diagnosing COVID-19 Severity from Chest X-Ray Images Using ViT and CNN Architectures
 
 ## Abstract
 
@@ -18,7 +18,7 @@ Pretrained models used in this study are given in Table 3. Image processing syst
 
 VGG-16, AlexNet, DenseNet, MobileNet v2 and SqueezeNet models were imported from pytorch with pretrained weights. DenseNet121 variants were imported from the torchxrayvision library (Cohen et al., 2021b) with pretrained weights (all, chex, pc, mimic nb, mimic ch, nih, and rsna). Each of these models are pretrained on a different source of CXRs, with datasets of varying sizes (see Table 3 for sizes). All model weights other than those in classification layers were frozen. The final output layers of ImageNet-pretrained models were adjusted to output 1 value for the regression task, or 3 values for the classification task. For torchxrayvision models we added an extra two linear layers with a ReLU activation function in between to adapt the 18-class output of the model to our regression or classification tasks.
 
-A transformer is a deep learning model that adopts the mechanism of self-attention, differentially weighting the significance of each part of the input data. Transformers found their initial applications in natural language processing (NLP) tasks (Devlin et al., 2019; Brown et al., 2020). The Vision Transformer (ViT) (Alexey et al., 2020) computes relationships among pixels in various small sections of the image (e.g., 16x16 pixels), at a drastically reduced cost. Images are presented to the model as a sequence of fixed-size patches (resolution 16x16), which are linearly embedded. The result is fed to the transformer and attention mechanisms applied. We imported a ViT from Hugging Face pretrained on 14 million images and fine-tuned it for 20 epochs on our dataset.
+A transformer is a deep learning model that adopts the mechanism of self-attention, differentially weighting the significance of each part of the input data. Transformers found their initial applications in natural language processing (NLP) tasks (Devlin et al., 2019; Brown et al., 2020). The Vision Transformer (ViT) (Alexey et al., 2020) computes relationships among pixels in various small sections of the image (e.g., 16x16 pixels), at a drastically reduced cost. Images are presented to the model as a sequence of fixed-size patches (resolution 16x16), which are linearly embedded. The result is fed to the transformer and attention mechanisms applied. We imported a ViT from Hugging Face pretrained on 14 million images and fine-tuned it for 20 epochs on our dataset. 
 
 <p align="center">
   <img width="443" alt="Screenshot 2023-04-30 at 0 38 23" src="https://user-images.githubusercontent.com/14030344/235335777-7b885236-ea8d-432a-9d93-ae18388afd07.png">
@@ -45,6 +45,9 @@ The ViT had the best predictions in the regression task, with an MAE of 0.5676. 
   <img width="422" alt="regression_results" src="https://user-images.githubusercontent.com/14030344/235335149-8ef9874a-9c45-4f2a-a9b2-4165efc05ccc.png">
 </p>
 
+#### Models
+Fine-tuned ViT for regression task is available at https://huggingface.co/ludolara/vit-COVID-19-severity.
+
 ### Explainability
 
 Being able to explain an ML model’s decisions is a key part of ensuring stakeholder confidence in the model. We generated saliency maps (Figure 4) using our DenseNetall torchxrayvision pretrained model to help us understand which regions of the image are influencing the model’s decisions. Different images had different focal points, suggesting that the model is looking at features of the images and not purely shortcut learning. Without consulting experts (radiologists), however, it is difficult to judge whether the model is focusing on the right regions.
@@ -52,9 +55,6 @@ Being able to explain an ML model’s decisions is a key part of ensuring stakeh
 <p align="center">
   <img width="421" alt="Screenshot 2023-04-30 at 0 28 42" src="https://user-images.githubusercontent.com/14030344/235335521-46111685-0bfb-43c7-957d-aab5f46cfa51.png">
 </p>
-
-### Models
-- Fine-tuned ViT is available at https://huggingface.co/ludolara/vit-COVID-19-severity.
 
 ## Conclusion
 In conclusion, we have leveraged the power of machine learning methods for predicting the severity of the COVID19 condition of a patient from the chest X-rays (CXRS) by generating a large single dataset from three different data sources. We have approached the problem as regression and classification severity prediction tasks and used different pre-trained ImageNet-models VGG-16, AlexNet, DenseNet, MobileNet V2, SqueezeNet, vision transformer (ViT) and chest-X ray pre-trained model DenseNet-121.
